@@ -148,7 +148,8 @@ mailphish_analyzer/
 ├── state.json
 ├── task_log.txt
 ├── run_mailphish.bat
-└── run_mailphish_hidden.vbs ```
+└── run_mailphish_hidden.vbs
+```
 
 
 ## Screenshots
