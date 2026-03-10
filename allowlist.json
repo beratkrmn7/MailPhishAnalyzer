@@ -1,0 +1,28 @@
+{
+  "trusted_domains": [
+    "amazon.com",
+    "amazon.com.tr",
+    "apple.com",
+    "discord.com",
+    "github.com",
+    "google.com",
+    "help.instagram.com",
+    "instagram.com",
+    "linkedin.com",
+    "mail.yemeksepeti.com",
+    "microsoft.com",
+    "accountprotection.microsoft.com",
+    "outlook.com",
+    "paypal.com",
+    "steampowered.com",
+    "yemeksepeti.com",
+    "garantibbva.com.tr"
+  ],
+  "trusted_sender_addresses": [
+    "noreply@github.com",
+    "notifications@github.com",
+    "no-reply@accounts.google.com",
+    "account-security-noreply@accountprotection.microsoft.com",
+    "no-reply@mail.yemeksepeti.com"
+  ]
+}

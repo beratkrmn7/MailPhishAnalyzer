@@ -1,0 +1,11 @@
+credentials.json
+token.json
+state.json
+task_log.txt
+
+reports/
+__pycache__/
+*.pyc
+
+run_mailphish.bat
+run_mailphish_hidden.vbs
