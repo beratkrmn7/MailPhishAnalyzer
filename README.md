@@ -177,7 +177,6 @@ Terminal view of the running phishing triage engine.
 ## Installation
 
 ### 1. Clone the repository
-```bash
 git clone [https://github.com/beratkrmn7/MailPhishAnalyzer.git](https://github.com/beratkrmn7/MailPhishAnalyzer.git)
 cd MailPhishAnalyzer
 2. Install dependencies
@@ -216,11 +215,11 @@ $env:GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
 Usage
 Basic run:
 
-Bash
+
 python app.py --interval 30 --export --query "in:inbox"
 With Gmail labels:
 
-Bash
+
 python app.py --interval 30 --export --label --query "in:inbox"
 Important Arguments
 --interval → Scan interval in seconds
