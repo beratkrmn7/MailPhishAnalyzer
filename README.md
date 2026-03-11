@@ -174,162 +174,167 @@ Terminal view of the running phishing triage engine.
 
 
 
-## Installation
 
-### 1. Clone the repository
-git clone [https://github.com/beratkrmn7/MailPhishAnalyzer.git](https://github.com/beratkrmn7/MailPhishAnalyzer.git)
+# Installation
+
+## Clone the Repository
+
+git clone https://github.com/beratkrmn7/MailPhishAnalyzer.git
+
 cd MailPhishAnalyzer
-2. Install dependencies
-Bash
+## Install Dependencies
 pip install -r requirements.txt
-3. Gmail API Setup
-You need:
 
-A Google Cloud project
+## Gmail API Setup
+- Before running the project, you need:
 
-Gmail API enabled
+- A Google Cloud project
 
-OAuth Desktop Client credentials
+- Gmail API enabled
 
-A credentials.json file in the project folder
+- OAuth Desktop Client credentials
+
+- A credentials.json file placed in the project folder
 
 Note: On the first run, the script opens a browser and requests Gmail access.
 
-4. Optional API Integrations
-You can also configure:
+## Optional API Integrations
+- You can also configure these services:
+- Google Safe Browsing API
+- Gemini API
+- Telegram Bot API
 
-Google Safe Browsing API
+## Environment Variables
 
-Gemini API
+- Example PowerShell setup:
 
-Telegram Bot API
-
-Environment Variables
-Example PowerShell setup:
-
-PowerShell
 $env:SAFE_BROWSING_API_KEY="YOUR_SAFE_BROWSING_API_KEY"
-$env:TELEGRAM_BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
-$env:TELEGRAM_CHAT_ID="YOUR_TELEGRAM_CHAT_ID"
-$env:GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-Usage
-Basic run:
 
+$env:TELEGRAM_BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
+
+$env:TELEGRAM_CHAT_ID="YOUR_TELEGRAM_CHAT_ID"
+
+$env:GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+# Usage
+## Basic Run
 
 python app.py --interval 30 --export --query "in:inbox"
-With Gmail labels:
 
-
+## Run with Gmail Labels
 python app.py --interval 30 --export --label --query "in:inbox"
-Important Arguments
---interval → Scan interval in seconds
 
---query → Gmail search query
+## Important Arguments
 
---export → Export JSON message reports
+- --interval → Scan interval in seconds
 
---label → Apply Gmail labels
+- --query → Gmail search query
 
---threshold → Alert threshold
+- --export → Export JSON message reports
 
-Example Workflow
-A new email arrives in Gmail.
+- --label → Apply Gmail labels
 
-Rule engine analyzes headers, content, links, and attachments.
+- --threshold → Alert threshold
 
-Safe Browsing checks suspicious URLs.
+# Example Workflow
 
-If the result is MEDIUM, Gemini reviews the case.
+- A new email arrives in Gmail.
 
-If the final severity is HIGH, Telegram sends an alert.
+- The rule engine analyzes headers, content, links, and attachments.
 
-A JSON report is saved locally.
+- Google Safe Browsing checks suspicious URLs.
 
-Why This Project Matters
+- If the result is MEDIUM, Gemini reviews the case.
+
+- If the final severity is HIGH, Telegram sends an alert.
+
+- A JSON report is saved locally.
+
+# Why This Project Matters
+
 Phishing is not just about bad keywords. Real phishing emails often combine:
 
-Impersonation
+- Impersonation
 
-Social engineering
+- Social engineering
 
-Trust abuse
+- Trust abuse
 
-Suspicious links
+- Suspicious links
 
-Deceptive formatting
+- Deceptive formatting
 
-Malicious attachments
+- Malicious attachments
 
 This project tries to model phishing detection more realistically by combining:
 
-Rule-based analysis
+- Rule-based analysis
 
-Threat intelligence
+- Threat intelligence
 
-LLM-assisted review
+- LLM-assisted review
 
-Real-time alerting
+- Real-time alerting
 
-Limitations
-This tool is useful as a phishing triage assistant, but it is not a perfect phishing detector. Known limitations:
+# Limitations
 
-False positives are still possible.
+This tool is useful as a phishing triage assistant, but it is **not a perfect phishing detector**.
 
-Sophisticated phishing may still bypass detection.
+Known limitations:
 
-Attachment analysis is based mostly on metadata / filename heuristics.
+- False positives are still possible
 
-Safe Browsing only catches known unsafe URLs.
+- Sophisticated phishing emails may still bypass detection
 
-LLM review depends on external API behavior and may not always be correct.
+- Attachment analysis is based mostly on metadata / filename heuristics
+
+- Safe Browsing only catches known unsafe URLs
+
+- LLM review depends on external API behavior and may not always be correct
 
 Disclaimer: This project should be treated as a decision support system, not a final authority.
 
-Future Improvements
-Better allowlist / trust modeling
+# Future Improvements
 
-Dedicated marketing/newsletter logic
+- Better allowlist / trust modeling
 
-Attachment hash reputation lookup
+- Dedicated marketing / newsletter logic
 
-URL sandboxing
+- Attachment hash reputation lookup
 
-Domain age / WHOIS enrichment
+- URL sandboxing
 
-Dashboard UI
+- Domain age / WHOIS enrichment
 
-Support for additional email providers
+- Dashboard UI
 
-Improved calibration using larger phishing datasets
+- Support for additional email providers
 
-Technologies Used
-Python
+- Improved calibration using larger phishing datasets
 
-Gmail API
+# Technologies Used
 
-Google Safe Browsing API
+- Python
 
-Gemini API
+- Gmail API
 
-Telegram Bot API
+- Google Safe Browsing API
 
-BeautifulSoup
+- Gemini API
 
-Author
-Berat Karaman
+- Telegram Bot API
+
+- BeautifulSoup
+
+# Author
+
+**BERAT KARAMAN**
 
 Built as a cybersecurity portfolio project focused on:
 
-Phishing detection
+- Phishing detection
 
-Email triage
+- Email triage
 
-Alert automation
+- Alert automation
 
 Hybrid rule + LLM analysis
-
-email triage
-
-alert automation
-
-hybrid rule + LLM analysis
